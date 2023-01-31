@@ -37,7 +37,7 @@ public class TrueFalse extends Question {
     }
 
     public boolean checkAnswer(){
-        if (answer.equals(response)){
+        if (answer.toLowerCase().equals(response.toLowerCase().trim())){
             return true;
         }
         else return false;

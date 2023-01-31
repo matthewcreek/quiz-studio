@@ -1,7 +1,8 @@
 package launchcode.studio7.main;
 
 public abstract class Question {
-    private static String prompt;
+    private String prompt;
+    private String response;
 
     public Question(String aPrompt){
         prompt = aPrompt;
@@ -13,4 +14,11 @@ public abstract class Question {
 
     public abstract boolean checkAnswer();
 
+    public void setResponse(String response) {
+        this.response = response;
+    }
+
+    public String getResponse() {
+        return response;
+    }
 }

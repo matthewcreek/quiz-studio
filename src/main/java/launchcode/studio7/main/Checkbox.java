@@ -15,6 +15,9 @@ public class Checkbox extends Question {
         this.answer = answer;
         this.choices = choices;
     }
+    public String getPrompt() {
+        return super.getPrompt();
+    }
 
     public ArrayList<String> getAnswer() {
         return answer;
@@ -30,7 +33,7 @@ public class Checkbox extends Question {
         String[] strSplit = response.split(",");
         responseToArrayList = new ArrayList<>(Arrays.asList(strSplit));
         for (int i = 0; i < responseToArrayList.size(); i++) {
-            responseToArrayList.set(i,responseToArrayList.get(i).trim());
+            responseToArrayList.set(i,responseToArrayList.get(i).trim().toLowerCase());
         }
 
     }
@@ -48,6 +51,9 @@ public class Checkbox extends Question {
         return Objects.hash(answer, responseToArrayList);
     }
     public boolean checkAnswer(){
+        for (int i = 0; i < answer.size(); i++) {
+            answer.set(i,answer.get(i).toLowerCase());
+        }
         if (answer.equals(responseToArrayList)){
             return true;
         } else return false;

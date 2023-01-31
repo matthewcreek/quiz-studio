@@ -48,7 +48,7 @@ public class MultipleChoice extends Question {
     }
 
     public boolean checkAnswer(){
-        if (response.equals(answer)){
+        if (response.toLowerCase().trim().equals(answer.toLowerCase())){
             return true;
         }
         else return false;
